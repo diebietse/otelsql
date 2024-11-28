@@ -8,6 +8,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Added
+
+- `DisableSkipErrMetrics` option skips the recording of `driver.ErrSkip` events if enabled. (#389)
+
 ## [0.35.0] - 2024-10-11
 
 ### Changed

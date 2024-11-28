@@ -63,6 +63,12 @@ func recordMetric(
 	startTime := time.Now()
 
 	return func(err error) {
+		if cfg.DisableSkipErrMetrics {
+			if err == driver.ErrSkip {
+				return
+			}
+		}
+
 		duration := float64(time.Since(startTime).Nanoseconds()) / 1e6
 
 		attributes := cfg.Attributes

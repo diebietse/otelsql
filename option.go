@@ -108,3 +108,10 @@ func WithInstrumentAttributesGetter(instrumentAttributesGetter InstrumentAttribu
 		cfg.InstrumentAttributesGetter = instrumentAttributesGetter
 	})
 }
+
+// WithDisableSkipErrMetrics will enable or disable recording any database call that responds with ErrSkip.
+func WithDisableSkipErrMetrics(disable bool) Option {
+	return OptionFunc(func(cfg *config) {
+		cfg.DisableSkipErrMetrics = disable
+	})
+}

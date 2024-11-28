@@ -80,6 +80,11 @@ type config struct {
 	// InstrumentAttributesGetter will be called to produce additional attributes while recording metrics to instruments.
 	// Default returns nil
 	InstrumentAttributesGetter InstrumentAttributesGetter
+
+	// DisableSkipErrMetrics will skip the recoding of any SkipErr metric if enabled.
+	// Since SkipErr results in a retry, the actual database interaction will still be recorded.
+	// Default is false
+	DisableSkipErrMetrics bool
 }
 
 // SpanOptions holds configuration of tracing span to decide
